@@ -8,7 +8,7 @@
     body {
       margin: 0;
       font-family: "Segoe UI", sans-serif;
-      background: url('https://cdn.pixabay.com/photo/2016/04/01/11/59/graduation-1300341_1280.png') no-repeat center center fixed;
+      background: url('https://images.unsplash.com/photo-1620338115727-c3e86f949c2a?auto=format&fit=crop&w=1350&q=80') no-repeat center center fixed;
       background-size: cover;
       color: #fff;
       scroll-behavior: smooth;
@@ -95,13 +95,14 @@
 </section>
 
 <script>
-  const eventDate = new Date(2025, 6, 4, 19, 0, 0); // 6 = шілде
+  const eventDate = new Date(2025, 6, 4, 19, 0, 0); // 6 — это июль (месяцы с 0)
+
   function updateCountdown() {
     const now = new Date().getTime();
     const distance = eventDate - now;
 
     if (distance < 0) {
-      document.getElementById("timer").innerHTML = "Іс-шара басталды!";
+      document.getElementById("timer").innerText = "Іс-шара басталды!";
       return;
     }
 
@@ -110,10 +111,11 @@
     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    document.getElementById("timer").innerHTML =
+    document.getElementById("timer").innerText =
       ${days} күн ${hours} сағат ${minutes} минут ${seconds} секунд;
   }
 
+  updateCountdown(); // запускаем сразу
   setInterval(updateCountdown, 1000);
 </script>
 
