@@ -8,7 +8,8 @@
     body {
       margin: 0;
       font-family: "Segoe UI", sans-serif;
-      background: url('https://images.unsplash.com/photo-1620338115727-c3e86f949c2a?auto=format&fit=crop&w=1350&q=80') no-repeat center center fixed;
+      /* ВСТАВЬ СВОЮ КАРТИНКУ: замените background.jpg на имя вашей картинки */
+      background: url('background.jpg') no-repeat center center fixed;
       background-size: cover;
       color: #fff;
       scroll-behavior: smooth;
@@ -91,12 +92,11 @@
 
 <section id="countdown">
   <h2>Кері санау</h2>
-  <div class="countdown" id="timer">Таймер жүктелуде...</div>
+  <div class="countdown" id="timer">Жүктелуде...</div>
 </section>
 
 <script>
-  const eventDate = new Date(2025, 6, 4, 19, 0, 0); // 6 — это июль (месяцы с 0)
-
+  const eventDate = new Date(2025, 6, 4, 19, 0, 0); // Июль — месяц 6 (от 0)
   function updateCountdown() {
     const now = new Date().getTime();
     const distance = eventDate - now;
@@ -115,8 +115,8 @@
       ${days} күн ${hours} сағат ${minutes} минут ${seconds} секунд;
   }
 
-  updateCountdown(); // запускаем сразу
-  setInterval(updateCountdown, 1000);
+  updateCountdown(); // сразу показать
+  setInterval(updateCountdown, 1000); // обновлять каждую секунду
 </script>
 
 </body>
